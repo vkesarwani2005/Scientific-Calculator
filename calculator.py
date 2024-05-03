@@ -197,13 +197,13 @@ def logarithm():
         print("Enter a choice between 1 or 2 ")
 
 # Function for calculating the Euclidean distance between two points
-def Eucledian_distance():
+def Euclidean_distance():
     x1=float(input("\n Enter the x coordinate of the first point (x1) "))
     x2=float(input("\n Enter the x coordinate of the second point (x2) "))
     y1=float(input("\n Enter the y coordinate of the first point (y1) "))
     y2=float(input("\n Enter the y coordinate of the second point (y2) "))
-    Eucledian_distance=((x2-x1)**2 + (y2-y1)**2)**0.5
-    print("\n \n THE EUCLEDIAN DISTANCE BETWEEN TWO POINTS ","(",x1,",",y1,")","and","(",x2,",",y2,")","is : ", Eucledian_distance, end="\n\n")
+    Euclidean_distance=((x2-x1)**2 + (y2-y1)**2)**0.5
+    print("\n \n THE EUCLIDEAN DISTANCE BETWEEN TWO POINTS ","(",x1,",",y1,")","and","(",x2,",",y2,")","is : ", Euclidean_distance, end="\n\n")
 
 # Function for calculating the area of different polygons
 def Area():
@@ -247,7 +247,7 @@ def Calculator():
     print("\n 8. CALCULATE THE FACTORIAL ", end="\n")
     print("\n 9. TRIGNOMETRY ", end="\n")
     print("\n 10. CALCULATE THE LOGARITHMICS AND NATURAL LOGS ", end="\n")
-    print("\n 11. CALCULATE THE EUCLEDIAN DISTANCE BETWEEN TWO POINTS  ", end="\n")
+    print("\n 11. CALCULATE THE EUCLIDEAN DISTANCE BETWEEN TWO POINTS  ", end="\n")
     print("\n 12. CALCULATE THE AREA OF VARIOUS SHAPES AND POLYGONS ", end="\n")
     print("\n\n PLEASE ENTER A VALID CHOICE (1-12) ", end="\n\n")
     choice=int(input("ENTER YOUR CHOICE(1-12)?"))
@@ -274,7 +274,7 @@ def Calculator():
     elif choice==10:
         logarithm()
     elif choice==11:
-        Eucledian_distance()
+        Euclidean_distance()
     elif choice==12:
         Area()
     else:
