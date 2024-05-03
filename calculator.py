@@ -1,36 +1,36 @@
-# IMPORTING LIABRARIES
-import math
-from tqdm import tqdm
-import time
-  
-#This function is designed for the INTRODUCTION TO OUR CALCULATOR PROGRAM
+# IMPORTING LIBRARIES
+import math  # Importing the math module for mathematical operations
+from tqdm import tqdm  # tqdm is used for creating progress bars
+import time  # The time module is used for time-related functions
 
+# Function for displaying the introduction to the calculator program
 def Welcome():
+    # Displaying a simple welcome message with a loading bar
     print("\n\n----------------------------------------------------------",end=" ")
     print("\n|                                                        |",end = " ")
     print("\n|              SCIENTIFIC CALCULATOR.....                |", end="\n")
-    for i in tqdm (range (100), desc="|Loading..."):
+    for i in tqdm (range (100), desc="|Loading..."):  # Showing a loading bar while initializing
         time.sleep(0.02)
         pass
     print("----------------------------------------------------------")
 
-# This function is designed for performing the ADDITION OF n numbers
-
+# Function for performing addition of n numbers
 def Addition():
     print("how many numbers you want to add?")
-    num_sum=int(input())
-    sum=0
+    num_sum=int(input())  # Getting the number of numbers to be added
+    sum=0  # Initializing the sum to 0
+    # Loop to input numbers and calculate the sum
     for x in range(num_sum):
         num_add = list(map(int,input("Enter Number "+ " " + str(x+1) + " ").split()))
         for y in num_add:
             sum+=y
     print("\n \n THE SUM OF ALL NUMBERS IS : ", sum, end="\n")  
 
-# This function is designed for performing the SUBTRACTION of n numbers
-
+# Function for performing subtraction of n numbers
 def Subtraction():
     print("\n For How many variables You want to do subtraction?",end="\n")
     num_diff = int(input("\n Enter the Total number of Operands"))
+    # Handling different cases based on the number of operands
     if num_diff == 1:
         print("\n Invalid Operation or please Give atleast two operands to perform Subtraction", end="\n")
     elif num_diff==2:
@@ -46,6 +46,7 @@ def Subtraction():
         print("\n\n THE DIFFERENCE BETWEEN THREE NUMBERS  ", Num1 , "and", Num2 , "and", Num3, "is :",diff, end="\n")
     elif num_diff>=4:
         numbers=[]
+        # Loop to input numbers and calculate the difference
         for x  in range(num_diff):
             for i in (input("Enter Number " + str(x+1)+ " ").split()):
                 numbers.append(i)
@@ -54,11 +55,11 @@ def Subtraction():
                 diff = diff - int(number)
         print(" \n \n THE DIFFERENCE BETWEEN ALL THE NUMBERS ", diff, end="\n\n")
 
-# This function is designed to perform MULTIPLICATION of two or more numbers
-
+# Function for performing multiplication of two or more numbers
 def Multiplication():
     print("\n How many numbers do you want to multiply?", end="\n")
     choice=int(input("\n Enter the Total number of Multiplicands :"))
+    # Handling different cases based on the number of multiplicands
     if choice==1:
         print("\n Multiplication of one number is not possible ", end="\n")
         print("\n Do You wish to multiply that number with itself :", end="\n")
@@ -74,6 +75,7 @@ def Multiplication():
         print("\n \n THE MULTIPLICATION OF NUMBERS ", Number1, "AND ", Number2, "IS : ", result, end="\n\n")
     elif choice>=3:
         numbers=[]
+        # Loop to input numbers and calculate the product
         for x  in range(choice):
             for i in (input("Enter Numbers "+ str(x+1)+ " ").split()):
                 numbers.append(i)
@@ -82,12 +84,12 @@ def Multiplication():
                 result=result*float(x)
         print("\n \n THE MULTIPLICATION OF THE NUMBERS IS : ",result, end="\n\n")
 
-#This function is designed to perform DIVISION of two numbers
-
+# Function for performing division of two numbers
 def Division():
     print("\n 1. Do the division for the integers ",end="\n")
     print("\n 2. Do the division for the floating point numbers ",end="\n")
     choice=int(input("\n Enter 1 or 2 "))
+    # Handling different cases based on the choice of division type
     if choice==1:
         Num1=int(input("\n Enter the first number (Dividend): "))
         Num2=int(input("\n Enter the Second NUmber (Divisor) "))
@@ -110,28 +112,26 @@ def Division():
         print("\n ERROR!!!! ..... \n",end="\n")
         print("INVALID CHOICE PLEASE CHOOSE BETWEEN 1 OR 2", end="\n\n")
 
-# This funciton is designed for CALCULATING THE MODULUS OF the numbers
-
+# Function for calculating the modulus of two numbers
 def Modulus():
     x=float(input("\n Enter  First number : "))
     y=float(input("\n Enter divisor : "))
     modulus=x%y
     print("\n\n THE MODULUS BETWEEN TWO NUMBERS ",x ,"and", y , "is :{:.2f}".format(modulus))
 
-# This function is designed for CALCULATING THE POWERS taking BASE AND  EXPONENTIAL  values from the user
-
+# Function for calculating the powers taking base and exponential values from the user
 def Powers_Exponents():
     Base=float(input("\n Enter the Base NUmber whose powers you have to calculate : "))
     exponent=float(input("\n Enter the exponent Number which will be given as power to base  : "))
     power=Base**exponent
     print("\n\n THE VALUE OF THE NUMBER ", Base, "TO THE POWER OF ",exponent,"is : ", power ,end="\n\n")
 
-# This function is designed to CALCULATE THE ROOTS OF A NUMBER OR 1/NTH POWER OF A NUMBER
-
+# Function for calculating the roots of a number or 1/nth power of a number
 def Calculating_Roots():
     Number=float(input("\n Enter the number whose root you want to find : "))
     exponent=float(input("\n Which Root You want ? "))
     result=pow(Number,1/exponent)
+    # Checking for specific cases like square root and cube root
     if exponent==2:
         print("\n THE SQUARE ROOT OF ", Number, "is : ", result, end="\n")
     elif exponent==3:
@@ -139,29 +139,30 @@ def Calculating_Roots():
     else:
         print("\n THE NTH ROOT OF ", Number, "is : ", result, end="\n")
 
-# This function is designed to calculate the FACTORIAL OF A NUMBER
-
+# Function for calculating the factorial of a number
 def Factorial():
     factorial=1
     Number=float(input("\n Enter a Number whose factorial You want to be Calculated : "))
+    # Checking if the number is a positive integer
     if (Number>=1) and Number.is_integer()==True:
+        # Calculating factorial using a loop
         for fact in range(1, int(Number+1)):
             factorial=factorial*fact
         print("\n\n THE FACTORIAL OF THE GIVEN NUMBER  ", Number,"is : ", factorial, end="\n\n")
     else:
         print("\n")
-        for i in tqdm (range (100), desc=" ERROR !!!!..."):
+        for i in tqdm (range (100), desc=" ERROR !!!!..."):  # Showing a progress bar for error message
             time.sleep(0.01)
             pass
         print("\n The FACTORIAL cannot be calculated for NEGATIVE NUMBERS and DECIMAL NUMBERS !!!!!!!!!", end="\n\n")
 
-# This function is designed to calculate the TRIGNOMETRY
-
+# Function for calculating trigonometric functions
 def Trignometry():
     print("\n WHICH TRIGNOMETRIC FUNCTION DO YOU WANT TO USE \n\n 1. SIN \n 2. COS \n 3. TAN \n 4. SEC \n 5. COSEC \n 6. COT ", end="\n")
     choice=float(input("\n Enter Choice (1-6)"))
     x=float(input("\n Enter the values in degrees "))
-    x=(x/180)*3.14159265359
+    x=(x/180)*3.14159265359  # Converting degrees to radians
+    # Calculating and printing the result based on the choice
     if (choice==1):
         print(math.sin(x), end="\n")
     elif(choice==2):
@@ -178,8 +179,7 @@ def Trignometry():
         print("\n\n INVALID CHOICE !!!! \n \n Please Enter a VALID CHOICE(1-6)",end="\n ")
     return(0)
 
-# This function  is designed for calculating the LOGARITHMIC VALUES
-
+# Function for calculating logarithmic values
 def logarithm():
     print("\n Which type of logarithms do you want to calculate ?", end="\n")
     print("\n 1.  NATURAL LOGS , (Base=e or ln)", end="\n")
@@ -196,8 +196,7 @@ def logarithm():
         print("\n Print INVALID CHOICE!!!! \n\n")
         print("Enter a choice between 1 or 2 ")
 
-# This function  is designed for calculating the EUCLEDIAN DISTANCE BETWEEN TWO POINTS
-
+# Function for calculating the Euclidean distance between two points
 def Eucledian_distance():
     x1=float(input("\n Enter the x coordinate of the first point (x1) "))
     x2=float(input("\n Enter the x coordinate of the second point (x2) "))
@@ -206,8 +205,7 @@ def Eucledian_distance():
     Eucledian_distance=((x2-x1)**2 + (y2-y1)**2)**0.5
     print("\n \n THE EUCLEDIAN DISTANCE BETWEEN TWO POINTS ","(",x1,",",y1,")","and","(",x2,",",y2,")","is : ", Eucledian_distance, end="\n\n")
 
-# This function is designed to CALCULATE AREA OF DIFFERENT POLYGONS 
-
+# Function for calculating the area of different polygons
 def Area():
     print("\n Which Figure Area do you want to calculate ? \n\n 1. RECTANGLE \n 2. SQUARE \n 3. TRIANGLE \n 4. CIRCLE \n 5. REGULAR POLYGON  ", end="\n")
     choice=int(input("\n Enter a Choice (1-5)"))
@@ -233,10 +231,9 @@ def Area():
     else:
         print("\n \n  INVALID CHOICE !!! PLEASE ENTER A VALID CHOICE(1-5) ",end="\n")
 
-#  THE MAIN MENU 
-
+# The main menu function
 def Calculator():
-
+    # Displaying the welcome message and main menu options
     Welcome()
     print("\n WHAT DO YOU WANT TO DO?", end="\n")
     print("\n MAIN MENU : ", end="\n\n")
@@ -255,6 +252,7 @@ def Calculator():
     print("\n\n PLEASE ENTER A VALID CHOICE (1-12) ", end="\n\n")
     choice=int(input("ENTER YOUR CHOICE(1-12)?"))
 
+    # Invoking the appropriate function based on user choice
     if choice==1:
         Addition()
     elif choice==2:
@@ -283,17 +281,16 @@ def Calculator():
         print("\n\n INVALID CHOICE !!!!!! ", end="\n")
         print("\n \n PLEASE ENTER A VALID CHOICE (1-12) ", end="\n\n")
 
-# THE MAIN FUNCITON
-
+# Main function
 if __name__=="__main__":
-
     print("\n\n SCIENTIFIC CALCULATOR PROGRAM", end="\n")
     print("\n")
-    for i in tqdm (range (100), desc=" INITIALIZING..."):
+    for i in tqdm (range (100), desc=" INITIALIZING..."):  # Displaying a progress bar while initializing
         time.sleep(0.01)
         pass
     Calculator()
 
+    # Loop to continue or exit the program based on user input
     while True:
         deci=input("\n DO YOU WANT TO CONTINUE? (Yes or No) ?")
         if deci=="Y" or deci=='y' or deci=='Yes' or  deci=='yes':
