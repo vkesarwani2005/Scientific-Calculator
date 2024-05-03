@@ -29,8 +29,4 @@ Upon running the script, you will be presented with a menu where you can choose 
 - The script utilizes the `tqdm` library to display loading bars for a more interactive experience.
 - Some functions may have specific requirements or limitations regarding input values, such as non-negative integers for factorial calculation.
 
-## Contributions
-Contributions to this calculator script are welcome. Feel free to fork the repository, make improvements, and submit pull requests.
-
-## License
 This script is available under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use and modify it for your purposes.
